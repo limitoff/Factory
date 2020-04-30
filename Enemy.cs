@@ -17,6 +17,15 @@ namespace FactoryMethod
             return enemy;
         }
 
+        public static BigEnemy CreateBigEnemy(Hp hp)
+        {
+            var enemy = Instantiate(Resources.Load<BigEnemy>(AssetPath.Enemies[EnemyType.Big]));
+            
+            enemy.Hp = hp;
+
+            return enemy;
+        }
+
         public void SetHP(Hp hp)
         {
             Hp = hp;
